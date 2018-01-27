@@ -1,3 +1,5 @@
+import { set } from 'lodash'
+
 const initialState = {
   loading: false,
   currentUser: false,
@@ -38,14 +40,42 @@ export default (state = initialState, action) => {
         currentUser: action.data.username
       }
 
+    case 'GRAPH_DATA_INCREMENT_COUNT_FOR_DATE':
+      let count = getCountForDate({ GraphData: state }, +action.data.date)
+      const username = getCurrentUser({ GraphData: state })
+
+      if (count >= 4) {
+        count = 0
+      } else {
+        count = count + 1
+      }
+
+      let newState = { ...state }
+
+      set(
+        newState,
+        `userData.${username}.${+action.data.date}.hackCount`,
+        count
+      )
+
+      return newState
+
     default:
       return state
   }
 }
 
-export const getUserDataByDate = function({ GraphData }, date) {
-  if (GraphData[username]) {
-    return GraphData[username].date || 0
+export const getUserDataByDate = function(state, date) {
+  const { GraphData } = state
+  const userData = GraphData.userData[getCurrentUser(state)]
+
+  if (userData) {
+    return (
+      userData[date] || {
+        githubCount: 0,
+        hackCount: 0
+      }
+    )
   }
 
   return 0
@@ -61,4 +91,14 @@ export const isLoading = function({ GraphData }) {
 
 export const didFailToLoad = function({ GraphData }) {
   return !!GraphData.failedToLoad
+}
+
+export const getCountForDate = function(state, date) {
+  const data = getUserDataByDate(state, date)
+
+  let count = data.githubCount + data.hackCount
+
+  if (count > 4) count = 4
+
+  return count
 }
