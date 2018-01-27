@@ -1,8 +1,7 @@
 // Import React
 import React from 'react'
 import styled from 'styled-components'
-import HackedGraph from '../../components/hackedgraph';
-//import Day from '../../components/day';
+import HackedGraph from '../../graph'
 
 // Import Spectacle Core tags
 import {
@@ -15,7 +14,7 @@ import {
   Quote,
   Slide,
   Text
-} from 'spectacle';
+} from 'spectacle'
 
 const Banner = styled.div`
   display: flex;
@@ -38,7 +37,7 @@ const GitSpan = styled.span`
   padding: 5px 10px;
 `
 const HackerSpan = styled.span`
-  color: #fff
+  color: #fff;
 `
 
 export default class HackerSlide extends React.Component {
@@ -47,13 +46,25 @@ export default class HackerSlide extends React.Component {
       <div>
         <Banner>
           <GitSpan>
-          <img src="https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png" alt="git" width="60" height="60"/>
+            <img
+              src="https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"
+              alt="git"
+              width="60"
+              height="60"
+            />
           </GitSpan>
           Hack the Graph
         </Banner>
         <div>
-          <img src="https://pbs.twimg.com/profile_images/842507326275969024/eMF37Swj_400x400.jpg" alt="avatar" width="232" height="232"/>
-          <HackerSpan><h3>Hacker</h3></HackerSpan>
+          <img
+            src="https://pbs.twimg.com/profile_images/842507326275969024/eMF37Swj_400x400.jpg"
+            alt="avatar"
+            width="232"
+            height="232"
+          />
+          <HackerSpan>
+            <h3>Hacker</h3>
+          </HackerSpan>
         </div>
         <HackedGraph />
       </div>

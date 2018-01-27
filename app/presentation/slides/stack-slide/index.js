@@ -1,8 +1,7 @@
 // Import React
 import React from 'react'
 import styled from 'styled-components'
-import HackedGraph from '../../components/hackedgraph';
-//import Day from '../../components/day';
+import HackedGraph from '../../graph'
 
 // Import Spectacle Core tags
 import {
@@ -15,7 +14,7 @@ import {
   Quote,
   Slide,
   Text
-} from 'spectacle';
+} from 'spectacle'
 
 const Banner = styled.div`
   display: flex;
@@ -44,12 +43,22 @@ export default class CustomSlide extends React.Component {
       <div>
         <Banner>
           <GitSpan>
-          <img src="https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png" alt="git" width="60" height="60"/>
+            <img
+              src="https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"
+              alt="git"
+              width="60"
+              height="60"
+            />
           </GitSpan>
           Hack the Graph
         </Banner>
         <div>
-          <img src="https://avatars1.githubusercontent.com/u/31639590?s=460&v=4" alt="avatar" width="232" height="232"/>
+          <img
+            src="https://avatars1.githubusercontent.com/u/31639590?s=460&v=4"
+            alt="avatar"
+            width="232"
+            height="232"
+          />
           <h3>Peter Vann</h3>
         </div>
         <HackedGraph />
