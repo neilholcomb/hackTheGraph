@@ -13,7 +13,16 @@ router.get('/', async ctx => {
 })
 
 router.get('/commits/:userId', async ctx => {
-  ctx.body = await commitScraper(ctx.params.userId)
+  const response = await commitScraper(ctx.params.userId)
+
+  if (!response) {
+    ctx.status = 404
+    ctx.body = {
+      error: `${ctx.params.userId} Not found on GitHub`
+    }
+  }
+
+  ctx.body = response
 })
 
 app.use(router.routes()).use(router.allowedMethods())

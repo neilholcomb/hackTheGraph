@@ -8,9 +8,22 @@ export default {
         state: true
       })
 
-      const data = await axios.get(`http://localhost:2000/commits/${username}`)
+      const data = await axios
+        .get(`http://localhost:2000/commits/${username}`)
+        .catch(() => {
+          return false
+        })
 
-      console.log(data)
+      if (!data) {
+        dispatch({
+          type: 'GRAPH_DATA_FAILED_TO_LOAD_USER',
+          data: {
+            username
+          }
+        })
+
+        return
+      }
 
       dispatch({
         type: 'GRAPH_DATA_LOADED',
