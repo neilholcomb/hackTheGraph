@@ -14,7 +14,9 @@ const Graph = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 11px;
@@ -85,10 +87,6 @@ class HackedGraph extends React.Component {
   }
     
   render() {
-  
-
-
-
     const days = ['Mon', 'Wed', 'Fri'];
 
     const weeks = [];
