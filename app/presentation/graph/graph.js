@@ -4,7 +4,7 @@ import * as GraphDataReducer from './store/reducers/graphData.js'
 import Loader from 'react-loader-spinner'
 import UserNameInput from './userNameInput'
 import UserNotFound from './404'
-import HackedGraph from '../components/hackedgraph'
+import ComposedGraph from '../components/composedGraph'
 
 class Graph extends React.Component {
   render() {
@@ -19,7 +19,7 @@ class Graph extends React.Component {
     }
 
     if (currentUser) {
-      return <HackedGraph />
+      return <ComposedGraph />
     }
 
     return (

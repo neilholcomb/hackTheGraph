@@ -35,7 +35,10 @@ export default async function commitScraper(username) {
     )
     data.forEach(day => {
       const key = day.date.split('-').join('')
-      commitData[key] = day.count
+      commitData[key] = {
+        githubCount: +day.count,
+        hackCount: 0
+      }
     })
   }
   await browser.close()

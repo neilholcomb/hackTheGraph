@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
-import Week from '../week'
+import { getWorkingYear } from '../../graph/store/reducers/hackedGraphData'
+
 import Grid from '../grid'
 import Legend from '../legend'
 
@@ -18,11 +20,12 @@ const Graph = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 11px;
   line-height: 1.5;
   color: #24292e;
-  background-color: #fff; 
+  background-color: #fff;
 `
 
 const Months = styled.div`
@@ -32,15 +35,14 @@ const Months = styled.div`
   top: 18px;
   left: 69px;
   right: 69px;
-  //background-color: red;
 `
 
 const Month = styled.div`
-  &:first-child{
+  &:first-child {
     padding-left: 15px;
   }
 
-  &:last-child{
+  &:last-child {
     padding-right: 15px;
   }
 `
@@ -55,65 +57,46 @@ const Day = styled.div`
 `
 
 class HackedGraph extends React.Component {
-
   printMonths(startAt = 0) {
     const months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec"
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
     ]
 
-    let monthsComponents = [];
-    for (var i = 0; i < months.length; i++)
-    {
-        const month = months[(startAt + i) % months.length];
-        monthsComponents.push(
-          <Month key={i}>
-            {month}
-          </Month>
-        )
+    let monthsComponents = []
+    for (var i = 0; i < months.length; i++) {
+      const month = months[(startAt + i) % months.length]
+      monthsComponents.push(<Month key={i}>{month}</Month>)
     }
 
     return monthsComponents
   }
-    
-  render() {
-    const days = ['Mon', 'Wed', 'Fri'];
 
-    const weeks = [];
-    for(var i = 0; i <54; i++) {
-      weeks.push(i);
-    }
+  render() {
+    const days = ['Mon', 'Wed', 'Fri']
 
     return (
       <Graph>
-        <Months>
-          {this.printMonths(9)}
-        </Months>
-        <Days>
-          {days.map((day, index) => (
-            <Day key={index}>
-              {day}
-            </Day>
-            ))}          
-        </Days>
+        <Months>{this.printMonths(9)}</Months>
+        <Days>{days.map((day, index) => <Day key={index}>{day}</Day>)}</Days>
         <Legend />
-        <Grid>
-          {weeks.map((week, index) => (
-            <Week key={index}/>
-          ))} 
-        </Grid>
-     </Graph>
-    );
+        <Grid />
+      </Graph>
+    )
   }
 }
-export default HackedGraph;
+export default connect(state => {
+  return {
+    workingYear: getWorkingYear(state)
+  }
+})(HackedGraph)
