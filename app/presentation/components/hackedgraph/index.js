@@ -85,10 +85,6 @@ class HackedGraph extends React.Component {
   }
     
   render() {
-  
-
-
-
     const days = ['Mon', 'Wed', 'Fri'];
 
     const weeks = [];
