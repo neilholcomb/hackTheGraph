@@ -17,8 +17,13 @@ import {
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
+//Import images
+import htgBgPng from "../assets/HTG-BG.png";
+
 // Require CSS
 require("normalize.css");
+import "../assets/style.css";
+
 
 const theme = createTheme({
   primary: "white",
@@ -26,7 +31,7 @@ const theme = createTheme({
   tertiary: "#03A9FC",
   quarternary: "#CECECE"
 }, {
-  primary: "Montserrat",
+  primary: "August Sans Reduced", //"Montserrat",
   secondary: "Helvetica"
 });
 
@@ -34,8 +39,8 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+        <Slide bgImage={htgBgPng} transition={["zoom"]} bgColor="primary">
+          <Heading size={1} fit caps lineHeight={1} textColor="primary">
             Spectacle Boilerplate
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
