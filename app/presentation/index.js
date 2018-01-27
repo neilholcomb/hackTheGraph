@@ -15,12 +15,22 @@ import {
 } from "spectacle";
 
 import CustomSlide from './slides/custom-slide';
+import KyloSlide from './slides/kylo-slide';
+import HackerSlide from './slides/hacker-slide';
+import DancingSlide from './slides/dancing-slide';
+import TrollSlide from './slides/troll-slide';
+import styled from 'styled-components'
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
 //Import images
 import htgBgPng from "../assets/htg-bg-blur.png";
+import kyloRenBg from "../assets/kylo-ren-bg.jpg";
+import codeBg from "../assets/graph-black-hole.jpg";
+import dancingBg from "../assets/rainbow.png";
+import trollBg from "../assets/troll-bg-blur.jpg";
+import stackPng from "../assets/stack.png";
 
 // Require CSS
 require("normalize.css");
@@ -36,6 +46,11 @@ const theme = createTheme({
   primary: "August Sans Reduced", //"Montserrat",
   secondary: "Helvetica"
 });
+
+const StackHeading = styled.div`
+  margin-top: -200px;
+  margin-bottom: 100px;
+`
 
 export default class Presentation extends React.Component {
   render() {
@@ -67,13 +82,33 @@ export default class Presentation extends React.Component {
             <ListItem>Item 4</ListItem>
           </List>
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <StackHeading>
+            < Heading size={1} textColor="secondary">Our Stack</Heading>
+          </StackHeading>
+          <img src={stackPng} alt="stage" width={"100%"}/>
+        </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
             <Quote>Example Quote</Quote>
             <Cite>Author</Cite>
           </BlockQuote>
         </Slide>
-        <CustomSlide />
+        <Slide transition={["fade"]} bgColor="primary">
+          <CustomSlide />
+        </Slide>
+        <Slide bgImage={kyloRenBg} bgDarken={0.0} transition={["fade"]} bgColor="primary">
+          <KyloSlide />
+        </Slide>
+        <Slide bgImage={codeBg} bgDarken={0.5} transition={["fade"]} bgColor="primary">
+          <HackerSlide />
+        </Slide>
+        <Slide bgImage={dancingBg} bgDarken={0.5} transition={["fade"]} bgColor="primary">
+          <DancingSlide />
+        </Slide>
+        <Slide bgImage={trollBg} bgDarken={0.7} transition={["fade"]} bgColor="primary">
+          <TrollSlide />
+        </Slide>
       </Deck>
     );
   }

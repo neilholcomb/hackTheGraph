@@ -37,8 +37,11 @@ const GitSpan = styled.span`
   margin-right: 0px;
   padding: 5px 10px;
 `
+const TrollSpan = styled.span`
+  color: #fff
+`
 
-export default class CustomSlide extends React.Component {
+export default class TrollSlide extends React.Component {
   render() {
     return (
       <div>
@@ -49,8 +52,8 @@ export default class CustomSlide extends React.Component {
           Hack the Graph
         </Banner>
         <div>
-          <img src="https://avatars1.githubusercontent.com/u/31639590?s=460&v=4" alt="avatar" width="232" height="232"/>
-          <h3>Peter Vann</h3>
+          <img src="https://pbs.twimg.com/profile_images/1284001901/trollface_400x400.jpg" alt="avatar" width="232" height="232"/>
+          <TrollSpan><h3>Troll Face!</h3></TrollSpan>
         </div>
         <HackedGraph />
       </div>

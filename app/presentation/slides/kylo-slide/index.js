@@ -37,8 +37,11 @@ const GitSpan = styled.span`
   margin-right: 0px;
   padding: 5px 10px;
 `
+const KyloSpan = styled.span`
+  color: #000
+`
 
-export default class CustomSlide extends React.Component {
+export default class KyloSlide extends React.Component {
   render() {
     return (
       <div>
@@ -49,8 +52,8 @@ export default class CustomSlide extends React.Component {
           Hack the Graph
         </Banner>
         <div>
-          <img src="https://avatars1.githubusercontent.com/u/31639590?s=460&v=4" alt="avatar" width="232" height="232"/>
-          <h3>Peter Vann</h3>
+          <img src="https://cdna.artstation.com/p/assets/images/images/001/687/336/20151223063124/smaller_square/elias-esseen-kylo-ren.jpg?1450873885" alt="avatar" width="232" height="232"/>
+          <KyloSpan><h3>Kylo Ren</h3></KyloSpan>
         </div>
         <HackedGraph />
       </div>
