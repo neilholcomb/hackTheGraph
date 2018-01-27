@@ -42,7 +42,7 @@ class Legend extends React.Component {
         <span>{lessText}</span>
         <Degrees>
         {colors.map( (color, index) => (
-          <Day color={color} key={index} />
+          <Day color={color} showHover={false} key={index} />
         ))}
         </Degrees>
         <span>{moreText}</span>

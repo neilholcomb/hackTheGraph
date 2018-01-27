@@ -23,8 +23,6 @@ const Banner = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: -137px;
-  
-
   margin-bottom: 50px;
 
   color: #fff;
