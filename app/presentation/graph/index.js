@@ -1,9 +1,16 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+import store from './store'
 import styled from 'styled-components'
+import Graph from './graph'
 
-class Graph extends React.Component {
+class GraphContainer extends React.Component {
   render() {
-    return <div>Neil was here from the graph hi peter</div>
+    return (
+      <Provider store={store}>
+        <Graph />
+      </Provider>
+    )
   }
 }
-export default Graph
+export default GraphContainer
