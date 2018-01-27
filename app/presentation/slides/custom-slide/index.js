@@ -1,6 +1,7 @@
 // Import React
 import React from 'react'
-import Graph from '../../graph'
+import HackedGraph from '../../components/hackedgraph';
+//import Day from '../../components/day';
 
 // Import Spectacle Core tags
 import {
@@ -15,11 +16,11 @@ import {
   Text
 } from 'spectacle'
 
-export default class DemoSlide extends React.Component {
+export default class CustomSlide extends React.Component {
   render() {
     return (
       <Slide bgColor="primary">
-        <Graph />
+        <HackedGraph />
       </Slide>
     )
   }
