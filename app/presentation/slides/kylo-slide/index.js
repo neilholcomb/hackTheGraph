@@ -1,8 +1,7 @@
 // Import React
 import React from 'react'
 import styled from 'styled-components'
-import HackedGraph from '../../components/hackedgraph';
-//import Day from '../../components/day';
+import HackedGraph from '../../graph'
 
 // Import Spectacle Core tags
 import {
@@ -15,7 +14,7 @@ import {
   Quote,
   Slide,
   Text
-} from 'spectacle';
+} from 'spectacle'
 
 const Banner = styled.div`
   display: flex;
@@ -38,7 +37,7 @@ const GitSpan = styled.span`
   padding: 5px 10px;
 `
 const KyloSpan = styled.span`
-  color: #000
+  color: #000;
 `
 
 export default class KyloSlide extends React.Component {
@@ -47,13 +46,25 @@ export default class KyloSlide extends React.Component {
       <div>
         <Banner>
           <GitSpan>
-          <img src="https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png" alt="git" width="60" height="60"/>
+            <img
+              src="https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"
+              alt="git"
+              width="60"
+              height="60"
+            />
           </GitSpan>
           Hack the Graph
         </Banner>
         <div>
-          <img src="https://cdna.artstation.com/p/assets/images/images/001/687/336/20151223063124/smaller_square/elias-esseen-kylo-ren.jpg?1450873885" alt="avatar" width="232" height="232"/>
-          <KyloSpan><h3>Kylo Ren</h3></KyloSpan>
+          <img
+            src="https://cdna.artstation.com/p/assets/images/images/001/687/336/20151223063124/smaller_square/elias-esseen-kylo-ren.jpg?1450873885"
+            alt="avatar"
+            width="232"
+            height="232"
+          />
+          <KyloSpan>
+            <h3>Kylo Ren</h3>
+          </KyloSpan>
         </div>
         <HackedGraph />
       </div>
