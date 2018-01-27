@@ -8,12 +8,20 @@ export default async function commitScraper(username) {
   // const browser = await puppeteer.launch({ headless: false })
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
-  await page.goto(`https://github.com/${username}`)
+
+  const response = await page.goto(`https://github.com/${username}`)
+
+  if (response.headers().status === '404 Not Found') {
+    await browser.close()
+    return false
+  }
+
   //get our possible years of contribution
   let contributionYears = await page.$$('.profile-timeline-year-list li a')
-  //TODO click on each year and then await the graph to load
+
   let years = [...Array(contributionYears.length).keys()]
   //read the graph and extract its data
+
   for (let year of years) {
     let workingYear = currentYear - year
     await page.goto(
