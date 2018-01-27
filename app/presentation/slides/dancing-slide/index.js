@@ -37,8 +37,11 @@ const GitSpan = styled.span`
   margin-right: 0px;
   padding: 5px 10px;
 `
+const DancingSpan = styled.span`
+  color: #fff
+`
 
-export default class CustomSlide extends React.Component {
+export default class DancingSlide extends React.Component {
   render() {
     return (
       <div>
@@ -49,8 +52,8 @@ export default class CustomSlide extends React.Component {
           Hack the Graph
         </Banner>
         <div>
-          <img src="https://avatars1.githubusercontent.com/u/31639590?s=460&v=4" alt="avatar" width="232" height="232"/>
-          <h3>Peter Vann</h3>
+          <img src="https://i.stack.imgur.com/3Vhti.png" alt="avatar" width="232" height="232"/>
+          <DancingSpan><h3>Dancing Colors</h3></DancingSpan>
         </div>
         <HackedGraph />
       </div>
