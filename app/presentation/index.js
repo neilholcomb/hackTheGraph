@@ -127,7 +127,7 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
-          Neil
+        <CustomSlide />
         </Slide>
         <Slide
           bgImage={kyloRenBg}
@@ -161,7 +161,6 @@ export default class Presentation extends React.Component {
         >
           <TrollSlide />
         </Slide>
-        <CustomSlide />
       </Deck>
     )
   }
