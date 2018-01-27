@@ -18,7 +18,7 @@ import {
 import createTheme from "spectacle/lib/themes/default";
 
 //Import images
-import htgBgPng from "../assets/HTG-BG.png";
+import htgBgPng from "../assets/htg-bg-blur.png";
 
 // Require CSS
 require("normalize.css");
@@ -39,12 +39,12 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide bgImage={htgBgPng} transition={["zoom"]} bgColor="primary">
+        <Slide bgImage={htgBgPng} bgDarken={0.8} transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
-            Spectacle Boilerplate
+            Hack the Graph
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+            (TOP SECRET)
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary">
