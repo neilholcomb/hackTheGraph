@@ -125,8 +125,6 @@ const generateRandomDataForYear = function(state, year) {
   days.forEach(day => {
     let key = format(addDays(firstDayOfYear, day), 'YYYYMMDD')
 
-    console.log(year, key, firstDayOfYear)
-
     if (!randomUserData[key]) {
       randomUserData[key] = {
         githubCount: 0,
@@ -134,7 +132,7 @@ const generateRandomDataForYear = function(state, year) {
       }
     }
 
-    randomUserData[key].hackCount = getRandomInt(4)
+    randomUserData[key].hackCount = getRandomInt(5)
   })
 
   return {

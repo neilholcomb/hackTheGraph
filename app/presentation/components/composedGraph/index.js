@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 import { getWorkingYear } from '../../graph/store/reducers/hackedGraphData'
 import { getThemes, getSelectedTheme } from '../../graph/store/reducers/theme'
 import {
@@ -145,13 +146,22 @@ const ConnectedThemePicker = connect(state => {
   }
 })(ThemePicker)
 
+const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row;
+  margin: 0 41px 10px 41px;
+`
+
 class ComposedGraph extends React.Component {
   render() {
     return (
       <div>
-        <ConnectedThemePicker />
-        <ConnectedGenerateRandomData />
-        <ConnectedYearSelector />
+        <Row>
+          <ConnectedThemePicker />
+          <ConnectedGenerateRandomData />
+          <ConnectedYearSelector />
+        </Row>
         <HackedGraph />
       </div>
     )
