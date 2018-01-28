@@ -3,7 +3,6 @@ import React from 'react'
 
 // Import Spectacle Core tags
 import {
-  Appear,
   BlockQuote,
   Cite,
   Deck,
@@ -40,6 +39,7 @@ import stackPng from '../assets/stack.png'
 // Require CSS
 require('normalize.css')
 import '../assets/style.css'
+import '../assets/prism.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
 const theme = createTheme(
@@ -77,27 +77,45 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
             Hack the Graph
           </Heading>
-          <Appear>
-            <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              (TOP SECRET)
-            </Text>
-          </Appear>
-          <Appear>
-            <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              by Ren and Stimpy
-            </Text>
-          </Appear>
-          <Appear>
-            <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              erm... I mean...
-            </Text>
-          </Appear>
-          <Appear>
-            <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              Neil and Pete
-            </Text>
-          </Appear>
+          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+            (TOP SECRET)
+          </Text>
         </Slide>
+        <Slide transition={['fade']} bgColor="tertiary">
+          <Heading size={6} textColor="primary" caps>
+            Typography
+          </Heading>
+          <Heading size={1} textColor="secondary">
+            Heading 1
+          </Heading>
+          <Heading size={2} textColor="secondary">
+            Heading 2
+          </Heading>
+          <Heading size={3} textColor="secondary">
+            Heading 3
+          </Heading>
+          <Heading size={4} textColor="secondary">
+            Heading 4
+          </Heading>
+          <Heading size={5} textColor="secondary">
+            Heading 5
+          </Heading>
+          <Text size={6} textColor="secondary">
+            Standard text
+          </Text>
+        </Slide>
+        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Standard List
+          </Heading>
+          <List>
+            <ListItem>Item 1</ListItem>
+            <ListItem>Item 2</ListItem>
+            <ListItem>Item 3</ListItem>
+            <ListItem>Item 4</ListItem>
+          </List>
+        </Slide>
+
         <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
           <StackHeading>
             <Heading size={1} textColor="secondary">
@@ -105,6 +123,12 @@ export default class Presentation extends React.Component {
             </Heading>
           </StackHeading>
           <img src={stackPng} alt="stage" width={'100%'} />
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <BlockQuote>
+            <Quote>Example Quote</Quote>
+            <Cite>Author</Cite>
+          </BlockQuote>
         </Slide>
         <Slide transition={['fade']} bgColor="primary">
         <CustomSlide />

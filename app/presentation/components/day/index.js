@@ -11,14 +11,11 @@ const Pixel = styled.div`
   margin: 2px 1px;
 
   background-color: ${props => props.color};
-  &:hover {
-    background-color: ${props => (props.showHover ? '#e2f25c' : props.color)};
-  }
+  cursor: pointer;
 `
 
 class Day extends React.Component {
   static defaultProps = {
-    showHover: true,
     color: '#eee'
   }
 
@@ -42,7 +39,6 @@ class Day extends React.Component {
       <Pixel
         onClick={this.nextColor}
         color={color}
-        showHover={this.props.showHover}
       />
     )
   }
