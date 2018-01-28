@@ -31,7 +31,7 @@ const Banner = styled.div`
 `
 const GitSpan = styled.span`
   position: relative;
-  top: 4px;
+  top: 2px;
   left: 0px
   margin-right: 0px;
   padding: 5px 10px;
@@ -59,7 +59,7 @@ export default class CustomSlide extends React.Component {
             width="232"
             height="232"
           />
-          <h3>Peter Vann</h3>
+          <h1>Peter Vann</h1>
         </div>
         <HackedGraph />
       </div>

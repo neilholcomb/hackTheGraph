@@ -3,6 +3,9 @@ import React from 'react'
 import styled from 'styled-components'
 import HackedGraph from '../../graph'
 
+//Import image
+import kyloRenLs from '../../../assets/krls.png'
+
 // Import Spectacle Core tags
 import {
   BlockQuote,
@@ -31,13 +34,19 @@ const Banner = styled.div`
 `
 const GitSpan = styled.span`
   position: relative;
-  top: 4px;
+  top: 0px;
   left: 0px
   margin-right: 0px;
   padding: 5px 10px;
 `
 const KyloSpan = styled.span`
   color: #000;
+`
+
+const KylosLS = styled.img`
+   width: 840px;
+   left: 0px;
+   margin-top: 45px;
 `
 
 export default class KyloSlide extends React.Component {
@@ -52,6 +61,8 @@ export default class KyloSlide extends React.Component {
               width="60"
               height="60"
             />
+            
+            
           </GitSpan>
           Hack the Graph
         </Banner>
@@ -63,10 +74,10 @@ export default class KyloSlide extends React.Component {
             height="232"
           />
           <KyloSpan>
-            <h3>Kylo Ren</h3>
+            <h1>Kylo Ren</h1>
           </KyloSpan>
         </div>
-        <HackedGraph />
+        <KylosLS src={kyloRenLs} alt={"LS"} />
       </div>
     )
   }
