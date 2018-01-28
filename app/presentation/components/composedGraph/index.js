@@ -1,11 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getWorkingYear } from '../../graph/store/reducers/hackedGraphData'
+import { getThemes, getSelectedTheme } from '../../graph/store/reducers/theme'
 import {
   ButtonDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Button
 } from 'reactstrap'
 import HackedGraph from '../hackedgraph'
 
@@ -65,10 +67,90 @@ const ConnectedYearSelector = connect(state => {
   }
 })(YearSelector)
 
+class GenerateRandomData extends React.Component {
+  randomData = () => {
+    this.props.dispatch({
+      type: 'GRAPH_DATA_GENERATE_RANDOM_DATA_FOR_YEAR',
+      data: {
+        year: this.props.year
+      }
+    })
+  }
+
+  render() {
+    return (
+      <Button outline size="sm" onClick={this.randomData}>
+        Generate Random Data
+      </Button>
+    )
+  }
+}
+let ConnectedGenerateRandomData = connect(state => {
+  return {
+    year: getWorkingYear(state)
+  }
+})(GenerateRandomData)
+
+class ThemePicker extends React.Component {
+  state = {
+    isOpen: false
+  }
+
+  toggleMenu = () => {
+    this.setState(state => {
+      return {
+        isOpen: !state.isOpen
+      }
+    })
+  }
+
+  selectTheme = theme => {
+    this.props.dispatch({
+      type: 'THEME_SELECT_THEME',
+      data: theme
+    })
+  }
+
+  render() {
+    const { themes, theme } = this.props
+    let { isOpen } = this.state
+
+    return (
+      <ButtonDropdown isOpen={isOpen} toggle={this.toggleMenu}>
+        <DropdownToggle caret outline size="sm">
+          {theme.title}
+        </DropdownToggle>
+        <DropdownMenu>
+          {Object.keys(themes).map(key => {
+            return (
+              <DropdownItem
+                key={key}
+                onClick={() => {
+                  this.selectTheme(key)
+                }}
+              >
+                {themes[key].title}
+              </DropdownItem>
+            )
+          })}
+        </DropdownMenu>
+      </ButtonDropdown>
+    )
+  }
+}
+const ConnectedThemePicker = connect(state => {
+  return {
+    themes: getThemes(state),
+    theme: getSelectedTheme(state)
+  }
+})(ThemePicker)
+
 class ComposedGraph extends React.Component {
   render() {
     return (
       <div>
+        <ConnectedThemePicker />
+        <ConnectedGenerateRandomData />
         <ConnectedYearSelector />
         <HackedGraph />
       </div>

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { addDays, format } from 'date-fns'
 import { getCountForDate } from '../../graph/store/reducers/graphData'
+import { getSelectedTheme } from '../../graph/store/reducers/theme'
 
 const Pixel = styled.div`
   width: 11px;
@@ -31,11 +32,8 @@ class Day extends React.Component {
   }
 
   render() {
-    let { count } = this.props
+    let { count, colors, color } = this.props
 
-    const colors = ['#eee', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
-
-    let { color } = this.props
     if (count) {
       color = colors[count]
     }
@@ -55,6 +53,7 @@ export default connect((state, ownProps) => {
 
   return {
     count: getCountForDate(state, date),
-    date
+    date,
+    colors: getSelectedTheme(state).colors
   }
 })(Day)
