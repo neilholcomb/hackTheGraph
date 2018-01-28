@@ -31,7 +31,7 @@ const Banner = styled.div`
 `
 const GitSpan = styled.span`
   position: relative;
-  top: 4px;
+  top: 2px;
   left: 0px
   margin-right: 0px;
   padding: 5px 10px;
@@ -63,7 +63,7 @@ export default class DancingSlide extends React.Component {
             height="232"
           />
           <DancingSpan>
-            <h3>Dancing Colors</h3>
+            <h1>Dancing Colors</h1>
           </DancingSpan>
         </div>
         <HackedGraph />

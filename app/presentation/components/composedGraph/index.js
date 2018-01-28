@@ -40,7 +40,7 @@ class YearSelector extends React.Component {
 
     return (
       <ButtonDropdown isOpen={isOpen} toggle={this.toggleMenu}>
-        <DropdownToggle caret outline size="sm">
+        <DropdownToggle caret color="primary" size="sm">
           {this.props.year}
         </DropdownToggle>
         <DropdownMenu>

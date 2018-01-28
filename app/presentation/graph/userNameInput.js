@@ -1,6 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import GraphDataActions from './store/actions/graphData'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  width: 440px;
+  margin: 0 auto;
+  background-color: #e0e0e0;
+`
 
 class UserNameInput extends React.Component {
   state = {
@@ -23,7 +30,7 @@ class UserNameInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <Wrapper>
         <label>Enter your GitHub username</label>
         <br />
         <form onSubmit={this.handleUserEntered}>
@@ -34,7 +41,7 @@ class UserNameInput extends React.Component {
             onChange={this.handleChange}
           />
         </form>
-      </div>
+      </Wrapper>
     )
   }
 }
