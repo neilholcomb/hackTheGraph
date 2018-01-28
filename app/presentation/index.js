@@ -40,7 +40,6 @@ import stackPng from '../assets/stack.png'
 // Require CSS
 require('normalize.css')
 import '../assets/style.css'
-import '../assets/prism.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
 const theme = createTheme(
