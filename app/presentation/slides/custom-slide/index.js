@@ -35,6 +35,10 @@ const GitSpan = styled.span`
   left: 0px
   margin-right: 0px;
   padding: 5px 10px;
+  `
+
+const AvatarContainer = styled.div`
+  margin-bottom: 50px;
 `
 
 export default class CustomSlide extends React.Component {
@@ -52,15 +56,14 @@ export default class CustomSlide extends React.Component {
           </GitSpan>
           Hack the Graph
         </Banner>
-        <div>
+        <AvatarContainer>
           <img
             src="https://avatars1.githubusercontent.com/u/31639590?s=460&v=4"
             alt="avatar"
             width="232"
             height="232"
           />
-          <h1>Peter Vann</h1>
-        </div>
+        </AvatarContainer>
         <HackedGraph />
       </div>
     )
