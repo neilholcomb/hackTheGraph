@@ -55,6 +55,11 @@ const Days = styled.div`
 const Day = styled.div`
   margin: 9px;
 `
+const ThemeLabel = styled.div`
+  position: absolute;
+  top: 135px;
+  left: 70px;
+`
 
 class HackedGraph extends React.Component {
   printMonths(startAt = 0) {
@@ -89,6 +94,7 @@ class HackedGraph extends React.Component {
       <Graph>
         <Months>{this.printMonths(9)}</Months>
         <Days>{days.map((day, index) => <Day key={index}>{day}</Day>)}</Days>
+        <ThemeLabel>ThemeName</ThemeLabel>
         <Legend />
         <Grid />
       </Graph>
