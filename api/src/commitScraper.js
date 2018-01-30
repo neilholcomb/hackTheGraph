@@ -1,5 +1,4 @@
 import puppeteer from 'puppeteer'
-import { userInfo } from 'os'
 
 export default async function commitScraper(username) {
   let commitData = {}

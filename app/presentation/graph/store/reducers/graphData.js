@@ -1,4 +1,5 @@
 import { set } from 'lodash'
+import { addDays, startOfYear, format } from 'date-fns'
 
 const initialState = {
   loading: false,
@@ -60,6 +61,10 @@ export default (state = initialState, action) => {
 
       return newState
 
+    case 'GRAPH_DATA_GENERATE_RANDOM_DATA_FOR_YEAR':
+      return generateRandomDataForYear(state, action.data.year)
+
+      return state
     default:
       return state
   }
@@ -101,4 +106,40 @@ export const getCountForDate = function(state, date) {
   if (count > 4) count = 4
 
   return count
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max))
+}
+
+const generateRandomDataForYear = function(state, year) {
+  let username = getCurrentUser({ GraphData: state })
+
+  let userData = state.userData[username]
+  let randomUserData = { ...userData }
+
+  let firstDayOfYear = startOfYear(new Date(year, 2, 2))
+
+  let days = Array.from(Array(365).keys())
+
+  days.forEach(day => {
+    let key = format(addDays(firstDayOfYear, day), 'YYYYMMDD')
+
+    if (!randomUserData[key]) {
+      randomUserData[key] = {
+        githubCount: 0,
+        hackCount: 0
+      }
+    }
+
+    randomUserData[key].hackCount = getRandomInt(5)
+  })
+
+  return {
+    ...state,
+    userData: {
+      ...state.userData,
+      [username]: randomUserData
+    }
+  }
 }

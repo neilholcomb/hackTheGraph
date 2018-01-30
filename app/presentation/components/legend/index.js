@@ -1,6 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import Day from '../day';
+import React from 'react'
+import { connect } from 'react-redux'
+import styled from 'styled-components'
+import Day from '../day'
+import { getSelectedTheme } from '../../graph/store/reducers/theme'
 
 const LegendRow = styled.div`
   display: flex;
@@ -8,9 +10,9 @@ const LegendRow = styled.div`
   align-items: center;
   justify-content: space-around;
 
- position: absolute;
- top: 135px;
- right: 70px;
+  position: absolute;
+  top: 135px;
+  right: 70px;
 `
 
 const Degrees = styled.span`
@@ -20,34 +22,29 @@ const Degrees = styled.span`
 `
 
 class Legend extends React.Component {
-
   static defaultProps = {
     lessText: 'Less',
     moreText: 'More'
-  };
+  }
 
   render() {
-    const colors = [
-      '#eee',
-      '#c6e48b',
-      '#7bc96f',
-      '#239a3b',
-      '#196127'
-    ];
+    const { colors } = this.props
 
-    const {lessText, moreText} = this.props
+    const { lessText, moreText } = this.props
 
     return (
       <LegendRow>
         <span>{lessText}</span>
         <Degrees>
-        {colors.map( (color, index) => (
-          <Day color={color} key={index} />
-        ))}
+          {colors.map((color, index) => <Day color={color} key={index} />)}
         </Degrees>
         <span>{moreText}</span>
       </LegendRow>
-    );
+    )
   }
 }
-export default Legend;
+export default connect(state => {
+  return {
+    colors: getSelectedTheme(state).colors
+  }
+})(Legend)
