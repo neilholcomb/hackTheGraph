@@ -43,7 +43,6 @@ const TitleSpan = styled.span`
   color: #f00;
   text-shadow: 2px 2px 5px #000;
 `
-
 const KylosLS = styled.img`
    width: 840px;
    left: 0px;

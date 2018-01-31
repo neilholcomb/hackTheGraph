@@ -60,7 +60,7 @@ const theme = createTheme(
 )
 
 const StackHeading = styled.div`
-  margin-top: -200px;
+  margin-top: -150px;
   margin-bottom: 100px;
 `
 
@@ -148,7 +148,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide
           bgImage={pacmanBg}
-          bgDarken={0.4}
+          bgDarken={0.6}
           transition={['fade']}
           bgColor="primary"
         >
