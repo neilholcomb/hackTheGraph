@@ -114,14 +114,6 @@ export default class Presentation extends React.Component {
         <CustomSlide />
         </Slide>
         <Slide
-          bgImage={kyloRenBg}
-          bgDarken={0.0}
-          transition={['fade']}
-          bgColor="primary"
-        >
-          <KyloSlide />
-        </Slide>
-        <Slide
           bgImage={codeBg}
           bgDarken={0.5}
           transition={['fade']}
@@ -129,6 +121,14 @@ export default class Presentation extends React.Component {
           textColor="secondary"
         >
           <HackerSlide />
+        </Slide>
+        <Slide
+          bgImage={kyloRenBg}
+          bgDarken={0.0}
+          transition={['fade']}
+          bgColor="primary"
+        >
+          <KyloSlide />
         </Slide>
         <Slide
           bgImage={dancingBg}
