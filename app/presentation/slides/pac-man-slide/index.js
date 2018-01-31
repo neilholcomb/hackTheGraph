@@ -3,9 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 import HackedGraph from '../../graph'
 
-//Import image
-import kyloRenLs from '../../../assets/krls.png'
-
 // Import Spectacle Core tags
 import {
   BlockQuote,
@@ -34,25 +31,16 @@ const Banner = styled.div`
 `
 const GitSpan = styled.span`
   position: relative;
-  top: 0px;
+  top: 2px;
   left: 0px
   margin-right: 0px;
   padding: 5px 10px;
 `
 const TitleSpan = styled.span`
-  color: #f00;
-  text-shadow: 2px 2px 5px #000;
+  color: #fff;
 `
 
-const KylosLS = styled.img`
-   width: 840px;
-   left: 0px;
-   margin-top: 45px;
-`
-
-//<KylosLS src={kyloRenLs} alt={"LS"} />
-
-export default class KyloSlide extends React.Component {
+export default class PacManSlide extends React.Component {
   render() {
     return (
       <div>
@@ -64,19 +52,18 @@ export default class KyloSlide extends React.Component {
               width="60"
               height="60"
             />
-
           </GitSpan>
           Hack the Graph
         </Banner>
         <div>
           <img
-            src="https://cdna.artstation.com/p/assets/images/images/001/687/336/20151223063124/smaller_square/elias-esseen-kylo-ren.jpg?1450873885"
+            src="https://i.pinimg.com/736x/b6/ab/f8/b6abf87582f0fe11a934d3013d1707cd--classic-video-man-birthday.jpg"
             alt="avatar"
             width="232"
             height="232"
           />
           <TitleSpan>
-            <h1>Kylo Ren</h1>
+            <h1>Pac-Man</h1>
           </TitleSpan>
         </div>
         <HackedGraph />

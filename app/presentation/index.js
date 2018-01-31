@@ -23,6 +23,8 @@ import KyloSlide from './slides/kylo-slide'
 import HackerSlide from './slides/hacker-slide'
 import DancingSlide from './slides/dancing-slide'
 import TrollSlide from './slides/troll-slide'
+import PacManSlide from './slides/pac-man-slide'
+import TetrisSlide from './slides/tetris-slide'
 import styled from 'styled-components'
 
 // Import theme
@@ -35,6 +37,8 @@ import kyloRenBg from '../assets/kylo-ren-bg.jpg'
 import codeBg from '../assets/graph-black-hole.jpg'
 import dancingBg from '../assets/rainbow.png'
 import trollBg from '../assets/troll-bg-blur.jpg'
+import pacmanBg from '../assets/pac-man-bg.png'
+import tetrisBg from '../assets/tetris-bg.png'
 import stackPng from '../assets/stack.png'
 
 // Require CSS
@@ -110,14 +114,6 @@ export default class Presentation extends React.Component {
         <CustomSlide />
         </Slide>
         <Slide
-          bgImage={kyloRenBg}
-          bgDarken={0.0}
-          transition={['fade']}
-          bgColor="primary"
-        >
-          <KyloSlide />
-        </Slide>
-        <Slide
           bgImage={codeBg}
           bgDarken={0.5}
           transition={['fade']}
@@ -125,6 +121,14 @@ export default class Presentation extends React.Component {
           textColor="secondary"
         >
           <HackerSlide />
+        </Slide>
+        <Slide
+          bgImage={kyloRenBg}
+          bgDarken={0.0}
+          transition={['fade']}
+          bgColor="primary"
+        >
+          <KyloSlide />
         </Slide>
         <Slide
           bgImage={dancingBg}
@@ -141,6 +145,22 @@ export default class Presentation extends React.Component {
           bgColor="primary"
         >
           <TrollSlide />
+        </Slide>
+        <Slide
+          bgImage={pacmanBg}
+          bgDarken={0.4}
+          transition={['fade']}
+          bgColor="primary"
+        >
+          <PacManSlide />
+        </Slide>
+        <Slide
+          bgImage={tetrisBg}
+          bgDarken={0.7}
+          transition={['fade']}
+          bgColor="primary"
+        >
+          <TetrisSlide />
         </Slide>
       </Deck>
     )
