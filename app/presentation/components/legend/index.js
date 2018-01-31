@@ -29,8 +29,8 @@ class Legend extends React.Component {
 
   render() {
     const { colors } = this.props
-
-    const { lessText, moreText } = this.props
+    const { lessText } = this.props
+    const { moreText } = this.props
 
     return (
       <LegendRow>
@@ -45,6 +45,8 @@ class Legend extends React.Component {
 }
 export default connect(state => {
   return {
-    colors: getSelectedTheme(state).colors
+    colors: getSelectedTheme(state).colors,
+    lessText: getSelectedTheme(state).legend.lessText,
+    moreText: getSelectedTheme(state).legend.moreText
   }
 })(Legend)

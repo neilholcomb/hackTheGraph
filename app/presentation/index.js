@@ -34,7 +34,7 @@ import createTheme from 'spectacle/lib/themes/default'
 
 import htgBgPng from '../assets/htg-bg-blur.png'
 import kyloRenBg from '../assets/kylo-ren-bg.jpg'
-import codeBg from '../assets/graph-black-hole.jpg'
+import codeBg from '../assets/graph-black-hole-bg.jpg'
 import dancingBg from '../assets/rainbow.png'
 import trollBg from '../assets/troll-bg-blur.jpg'
 import pacmanBg from '../assets/pac-man-bg.png'
@@ -115,7 +115,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide
           bgImage={codeBg}
-          bgDarken={0.5}
+          bgDarken={0.6}
           transition={['fade']}
           bgColor="primary"
           textColor="secondary"
@@ -132,7 +132,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide
           bgImage={kyloRenBg}
-          bgDarken={0.0}
+          bgDarken={0.4}
           transition={['fade']}
           bgColor="primary"
         >
