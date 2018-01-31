@@ -88,17 +88,12 @@ export default class Presentation extends React.Component {
           </Appear>
           <Appear>
             <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              by Ren and Stimpy
+              by Neil Holcomb
             </Text>
           </Appear>
           <Appear>
             <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              erm... I mean...
-            </Text>
-          </Appear>
-          <Appear>
-            <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              Neil and Pete
+               and Peter Vann
             </Text>
           </Appear>
         </Slide>
