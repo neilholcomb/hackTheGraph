@@ -36,7 +36,7 @@ const GitSpan = styled.span`
   margin-right: 0px;
   padding: 5px 10px;
 `
-const DancingSpan = styled.span`
+const TitleSpan = styled.span`
   color: #fff;
 `
 
@@ -62,9 +62,9 @@ export default class DancingSlide extends React.Component {
             width="232"
             height="232"
           />
-          <DancingSpan>
+          <TitleSpan>
             <h1>Dancing Colors</h1>
-          </DancingSpan>
+          </TitleSpan>
         </div>
         <HackedGraph />
       </div>

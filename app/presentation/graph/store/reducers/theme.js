@@ -9,11 +9,23 @@ const themes = {
   },
   lastJedi: {
     title: 'Last Jedi',
-    colors: ['#ff8080', '#ff4040', '#ff0000', '#808080', '#000000']
+    colors: ['#ff8080', '#ff4040', '#ff0000', '#808080', '#000000'],
+    legend: {
+      lessText: 'Light',
+      moreText: 'Dark'
+    }
   },
   halloween: {
     title: 'Halloween',
-    colors: ['#eeeeee', '#fdf156', '#ffc722', '#ff9711', '#04001b']
+    colors: ['#eeeeee', '#fdf156', '#ffc722', '#ff9711', '#04001b'],
+    legend: {
+      lessText: 'Serene',
+      moreText: 'Spooky'
+    }
+  },
+  primary: {
+    title: 'Primary',
+    colors: ['#eeeeee', '#ffff00', '#00ff00', '#ff0000', '#0000ff']
   },
   amber: {
     title: 'Amber',
@@ -87,17 +99,21 @@ const themes = {
     title: 'Teal',
     colors: ['#eeeeee', '#b2dfdb', '#4db6ac', '#00897b', '#004d40']
   },
-  mediumYellow: {
-    title: 'Medium-Yellow',
-    colors: ['#eeeeee', '#fff9c4', '#fff176', '#ffd835', '#f57f17']
-  },
   moon: {
     title: 'Moon',
-    colors: ['#eeeeee', '#6bcdff', '#00a1f3', '#48009a', '#4f2266']
+    colors: ['#eeeeee', '#6bcdff', '#00a1f3', '#48009a', '#4f2266'],
+    legend: {
+      lessText: 'New',
+      moreText: 'Full'
+    }
   },
   psychedelic: {
     title: 'Psychedelic',
-    colors: ['#eeeee', '	#fdff00', '#00ff38', '#00f9ff', '#fd00ff']
+    colors: ['#eeeee', '	#fdff00', '#00ff38', '#00f9ff', '#fd00ff'],
+    legend: {
+      lessText: 'Normal',
+      moreText: 'Trippy'
+    }
   },
   yellow: {
     title: 'Yellow',

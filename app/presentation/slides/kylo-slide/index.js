@@ -39,8 +39,9 @@ const GitSpan = styled.span`
   margin-right: 0px;
   padding: 5px 10px;
 `
-const KyloSpan = styled.span`
-  color: #000;
+const TitleSpan = styled.span`
+  color: #f00;
+  text-shadow: 2px 2px 5px #000;
 `
 
 const KylosLS = styled.img`
@@ -48,6 +49,8 @@ const KylosLS = styled.img`
    left: 0px;
    margin-top: 45px;
 `
+
+//<KylosLS src={kyloRenLs} alt={"LS"} />
 
 export default class KyloSlide extends React.Component {
   render() {
@@ -61,8 +64,7 @@ export default class KyloSlide extends React.Component {
               width="60"
               height="60"
             />
-            
-            
+
           </GitSpan>
           Hack the Graph
         </Banner>
@@ -73,11 +75,11 @@ export default class KyloSlide extends React.Component {
             width="232"
             height="232"
           />
-          <KyloSpan>
+          <TitleSpan>
             <h1>Kylo Ren</h1>
-          </KyloSpan>
+          </TitleSpan>
         </div>
-        <KylosLS src={kyloRenLs} alt={"LS"} />
+        <HackedGraph />
       </div>
     )
   }

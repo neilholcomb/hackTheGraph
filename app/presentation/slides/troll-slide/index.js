@@ -36,7 +36,7 @@ const GitSpan = styled.span`
   margin-right: 0px;
   padding: 5px 10px;
 `
-const TrollSpan = styled.span`
+const TitleSpan = styled.span`
   color: #fff;
 `
 
@@ -62,9 +62,9 @@ export default class TrollSlide extends React.Component {
             width="232"
             height="232"
           />
-          <TrollSpan>
+          <TitleSpan>
             <h1>Troll Face!</h1>
-          </TrollSpan>
+          </TitleSpan>
         </div>
         <HackedGraph />
       </div>

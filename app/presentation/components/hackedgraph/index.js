@@ -56,8 +56,9 @@ const Day = styled.div`
   margin: 9px;
 `
 const ThemeLabel = styled.div`
+  visibility: hidden;
   position: absolute;
-  top: 135px;
+  top: 145px;
   left: 70px;
 `
 

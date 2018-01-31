@@ -36,7 +36,7 @@ const GitSpan = styled.span`
   margin-right: 0px;
   padding: 5px 10px;
 `
-const HackerSpan = styled.span`
+const TitleSpan = styled.span`
   color: #fff;
 `
 
@@ -62,9 +62,9 @@ export default class HackerSlide extends React.Component {
             width="232"
             height="232"
           />
-          <HackerSpan>
+          <TitleSpan>
             <h1>Hacker</h1>
-          </HackerSpan>
+          </TitleSpan>
         </div>
         <HackedGraph />
       </div>

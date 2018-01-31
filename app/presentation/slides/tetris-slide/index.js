@@ -36,7 +36,7 @@ const GitSpan = styled.span`
   margin-right: 0px;
   padding: 5px 10px;
 `
-const TetrisSpan = styled.span`
+const TitleSpan = styled.span`
   color: #fff;
 `
 
@@ -62,9 +62,9 @@ export default class TetrisSlide extends React.Component {
             width="232"
             height="232"
           />
-          <TetrisSpan>
+          <TitleSpan>
             <h1>Tetris</h1>
-          </TetrisSpan>
+          </TitleSpan>
         </div>
         <HackedGraph />
       </div>
