@@ -123,6 +123,14 @@ export default class Presentation extends React.Component {
           <HackerSlide />
         </Slide>
         <Slide
+          bgImage={trollBg}
+          bgDarken={0.7}
+          transition={['fade']}
+          bgColor="primary"
+        >
+          <TrollSlide />
+        </Slide>
+        <Slide
           bgImage={kyloRenBg}
           bgDarken={0.0}
           transition={['fade']}
@@ -137,14 +145,6 @@ export default class Presentation extends React.Component {
           bgColor="primary"
         >
           <DancingSlide />
-        </Slide>
-        <Slide
-          bgImage={trollBg}
-          bgDarken={0.7}
-          transition={['fade']}
-          bgColor="primary"
-        >
-          <TrollSlide />
         </Slide>
         <Slide
           bgImage={pacmanBg}
