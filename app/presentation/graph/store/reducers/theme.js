@@ -27,6 +27,30 @@ const themes = {
       moreText: 'Spooky'
     }
   },
+  mcdonalds: {
+    title: 'McDonald\'s',
+    colors: ['#eeeeee', '#c0fd92', '#40E0D0', '#ffc300', '#dd1021'],
+    legend: {
+      lessText: 'Ba Da Ba Ba Bah',
+      moreText: 'I\'m Lovin\' It!'
+    }
+  },
+  moon: {
+    title: 'Moon',
+    colors: ['#eeeeee', '#6bcdff', '#00a1f3', '#48009a', '#4f2266'],
+    legend: {
+      lessText: 'New',
+      moreText: 'Full'
+    }
+  },
+  psychedelic: {
+    title: 'Psychedelic',
+    colors: ['#eeeee', '	#fdff00', '#00ff38', '#00f9ff', '#fd00ff'],
+    legend: {
+      lessText: 'Normal',
+      moreText: 'Trippy'
+    }
+  },
   primary: {
     title: 'Primary',
     colors: ['#eeeeee', '#ffff00', '#00ff00', '#ff0000', '#0000ff'],
@@ -177,22 +201,6 @@ const themes = {
     legend: {
       lessText: 'Less',
       moreText: 'More'
-    }
-  },
-  moon: {
-    title: 'Moon',
-    colors: ['#eeeeee', '#6bcdff', '#00a1f3', '#48009a', '#4f2266'],
-    legend: {
-      lessText: 'New',
-      moreText: 'Full'
-    }
-  },
-  psychedelic: {
-    title: 'Psychedelic',
-    colors: ['#eeeee', '	#fdff00', '#00ff38', '#00f9ff', '#fd00ff'],
-    legend: {
-      lessText: 'Normal',
-      moreText: 'Trippy'
     }
   },
   yellow: {
