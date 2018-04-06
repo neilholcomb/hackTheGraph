@@ -53,10 +53,10 @@ const themes = {
   },
   primary: {
     title: 'Primary',
-    colors: ['#eeeeee', '#ffff00', '#00ff00', '#ff0000', '#0000ff'],
+    colors: ['#eeeeee','#ffff00', '#00ff00', '#ff0000', '#0000ff'],
     legend: {
-      lessText: 'Less',
-      moreText: 'More'
+      lessText: 'RoseArt',
+      moreText: 'Crayola'
     }
   },
   amber: {
