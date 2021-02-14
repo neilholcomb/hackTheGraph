@@ -34,7 +34,7 @@ import createTheme from 'spectacle/lib/themes/default'
 
 import htgBgPng from '../assets/htg-bg-blur.png'
 import kyloRenBg from '../assets/kylo-ren-bg.jpg'
-import codeBg from '../assets/graph-black-hole.jpg'
+import codeBg from '../assets/graph-black-hole-bg.jpg'
 import dancingBg from '../assets/rainbow.png'
 import trollBg from '../assets/troll-bg-blur.jpg'
 import pacmanBg from '../assets/pac-man-bg.png'
@@ -60,7 +60,7 @@ const theme = createTheme(
 )
 
 const StackHeading = styled.div`
-  margin-top: -200px;
+  margin-top: -150px;
   margin-bottom: 100px;
 `
 
@@ -88,17 +88,12 @@ export default class Presentation extends React.Component {
           </Appear>
           <Appear>
             <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              by Ren and Stimpy
+              by Neil Holcomb
             </Text>
           </Appear>
           <Appear>
             <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              erm... I mean...
-            </Text>
-          </Appear>
-          <Appear>
-            <Text margin="10px 0 0" textColor="tertiary" size={1} textSize={12} fit bold>
-              Neil and Pete
+               and Peter Vann
             </Text>
           </Appear>
         </Slide>
@@ -115,7 +110,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide
           bgImage={codeBg}
-          bgDarken={0.5}
+          bgDarken={0.6}
           transition={['fade']}
           bgColor="primary"
           textColor="secondary"
@@ -123,8 +118,16 @@ export default class Presentation extends React.Component {
           <HackerSlide />
         </Slide>
         <Slide
+          bgImage={trollBg}
+          bgDarken={0.7}
+          transition={['fade']}
+          bgColor="primary"
+        >
+          <TrollSlide />
+        </Slide>
+        <Slide
           bgImage={kyloRenBg}
-          bgDarken={0.0}
+          bgDarken={0.4}
           transition={['fade']}
           bgColor="primary"
         >
@@ -139,16 +142,8 @@ export default class Presentation extends React.Component {
           <DancingSlide />
         </Slide>
         <Slide
-          bgImage={trollBg}
-          bgDarken={0.7}
-          transition={['fade']}
-          bgColor="primary"
-        >
-          <TrollSlide />
-        </Slide>
-        <Slide
           bgImage={pacmanBg}
-          bgDarken={0.4}
+          bgDarken={0.6}
           transition={['fade']}
           bgColor="primary"
         >

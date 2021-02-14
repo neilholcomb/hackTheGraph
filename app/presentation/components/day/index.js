@@ -35,7 +35,7 @@ class Day extends React.Component {
       color = colors[count]
     }
 
-    return <Pixel onClick={this.nextColor} color={color} />
+    return <Pixel id="69" onClick={this.nextColor} color={color} />
   }
 }
 export default connect((state, ownProps) => {
